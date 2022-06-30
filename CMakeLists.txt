@@ -157,14 +157,6 @@ if (YAML_CPP_INSTALL)
     DESTINATION ${CMAKE_INSTALL_DATADIR}/pkgconfig)
 endif()
 
-if(YAML_CPP_BUILD_TESTS)
-	add_subdirectory(test)
-endif()
-
-if(YAML_CPP_BUILD_TOOLS)
-	add_subdirectory(util)
-endif()
-
 if (YAML_CPP_CLANG_FORMAT_EXE)
   add_custom_target(format
     COMMAND clang-format --style=file -i $<TARGET_PROPERTY:yaml-cpp,SOURCES>
